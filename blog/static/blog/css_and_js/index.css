@@ -98,7 +98,6 @@ margin-top:20px;
 
   }
   .mynavbar a:hover {
-    background-color: #ddd;
     color: #333;
     transition: all 2s;
   }
@@ -253,7 +252,6 @@ margin-top:2rem;
     
   }
   .navbar a:hover {
-    background-color: #ddd;
     color: #333;
     transition: all 2s;
   }
