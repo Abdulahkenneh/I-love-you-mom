@@ -79,17 +79,14 @@ WSGI_APPLICATION = 'pofolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dau46realo48kc',
-        'USER': 'u3uoh8eg590duo',
-        'PASSWORD': 'p1ffdf3a84604ab5bf4127fa6efae4fdc57e9e037bda826ed303cf70516c5050a',
-        'HOST': 'ceqbglof0h8enj.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
 
+
+# Database configuration for Heroku PostgreSQL
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgres://u7a1lj62662pnd:p5697820737b81fdf27ed1c6a967b70d2e3dc196cefeb1a6d858e8679ed4f547f@ceqbglof0h8enj.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d6bfi7ugsld3l3'
+    )
+}
 
 
 # Password validation
