@@ -1,39 +1,39 @@
 {% extends 'blog/base.html' %}
 {% load widget_tweaks %}
 {% block content %}
-    <div class="container-fluid justify-content-center  d-flex  " >
-           
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <div class="col-12 col-md-8 col-lg-6 bg-light p-4 rounded shadow-sm">
+            <form method="post" class="p-4">
+                {% csrf_token %}
+                {% if form.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Error:</strong> Please correct the following errors.
+                        <ul>
+                            {% for field, error_list in form.errors.items %}
+                                {% for error in error_list %}
+                                    <li>{{ field|title }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
 
-    <form  class='col col-8 outline-light bg-light justify-content-center  w-80 mx-auto mt-5' action='{% url 'blog:login' %}' method="post">
-      {% csrf_token %}
-      {% if form.errors %}
-      <div class="alert alert-danger" role="alert">
-          <strong>Error:</strong> Please correct the following errors.
-          <ul>
-              {% for field, error_list in form.errors.items %}
-                  {% for error in error_list %}
-                      <li>{{ field|title }}: {{ error }}</li>
-                  {% endfor %}
-              {% endfor %}
-          </ul>
-      </div>
-  {% endif %}
-       
-        <fieldset class='row m-5'>
-            <h2 class="form-heading">Login</h2>
-          <div class="mb-3">
-            <label  class="form-label">Email</label>
-            {% render_field form.username class="form-control form-control-lg"  placeholder="Enter username"  aria-label=".form-control-lg example"%}
-           
-          </div>
-          <div class="mb-3">
-            <label  class="form-label">password</label>
-            {% render_field form.password class="form-control form-control-lg"  placeholder="Enter password"  aria-label=".form-control-lg example"%}
-            
-            
-          </div>
-          <input type="submit" class="btn btn-primary mb-5" value='submit'>
-        </fieldset>
-         <p style="margin:10px" > Register here--> <a  href="{% url 'blog:register' %}">Register</a> </p>
-      </form>
+                <fieldset>
+                    <h2 class="form-heading text-center mb-4">Login</h2>
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Email</label>
+                        {% render_field form.username class="form-control form-control-lg" placeholder="Enter username" aria-label=".form-control-lg example" %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_password" class="form-label">Password</label>
+                        {% render_field form.password class="form-control form-control-lg" placeholder="Enter password" aria-label=".form-control-lg example" %}
+                    </div>
+                    <div class="d-grid">
+                        <input type="submit" class="btn btn-primary btn-lg" value="Submit">
+                    </div>
+                </fieldset>
+                <p class="text-center mt-3">Register here --> <a href="{% url 'blog:register' %}">Register</a></p>
+            </form>
+        </div>
+    </div>
 {% endblock %}

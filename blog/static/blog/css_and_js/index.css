@@ -438,7 +438,6 @@ margin-top:2rem;
   .home-main{
     margin:15% 20px 20px 20px;
     flex-grow: 1;
-    height: 50vh;
     justify-content: center;
     justify-items: center;
      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -544,7 +543,7 @@ margin-top:2rem;
 
 
 /* this is the style of the forms*/
-.form-container{
+.form-conteainer{
   display: block;
   flex-direction:column;
   width:450px;
@@ -715,7 +714,7 @@ color: white;
   align-self: start;
   position: sticky;
   top:0;
-  margin-top:2rem;
+  margin-top:1rem;
   width:150px;
   justify-content: center;
   background-color: white;
@@ -733,7 +732,6 @@ color: white;
   background-color:yellow;
   
 }
-
 .profile-picture {
   max-width: 200px;
   height: auto;
